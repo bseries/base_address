@@ -14,6 +14,7 @@
         "composer/installers": "~1.0",
         "uor/li3_flash_message": "dev-master as 1.0.0-dev",
         "unionofrad/lithium": "dev-dev as 1.0.0-dev",
+        "unionofrad/li3_cldr": "dev-master as 1.0.0-dev",
         "davidpersson/li3_behaviors": "1.*",
 		"atelierdisko/base_core": "1.2.*"
     },

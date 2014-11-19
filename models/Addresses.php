@@ -17,7 +17,7 @@ use base_core\models\Countries;
 use lithium\util\Validator;
 use lithium\g11n\Message;
 
-class Addresses extends \base_address\models\Base {
+class Addresses extends \base_core\models\Base {
 
 	use \base_core\models\UserTrait;
 

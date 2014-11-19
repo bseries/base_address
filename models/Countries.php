@@ -1,8 +1,8 @@
 <?php
 /**
- * Base Core
+ * Base Address
  *
- * Copyright (c) 2013-2014 Atelier Disko - All rights reserved.
+ * Copyright (c) 2014 Atelier Disko - All rights reserved.
  *
  * This software is proprietary and confidential. Redistribution
  * not permitted. Unless required by applicable law or agreed to
@@ -10,14 +10,15 @@
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  */
 
-namespace base_core\models;
+namespace base_address\models;
 
-use base_core\extensions\cms\Settings;
-use lithium\g11n\Catalog;
 use Collator;
+use lithium\g11n\Catalog;
 use lithium\util\Collection;
 use lithium\core\Environment;
 use lithium\storage\Cache;
+
+use base_core\extensions\cms\Settings;
 
 class Countries extends \base_core\models\Base {
 

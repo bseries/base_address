@@ -1,0 +1,23 @@
+{
+    "name": "atelierdisko/base_address",
+    "description": "Address functionality for Bento.",
+    "homepage": "http://atelierdisko.de",
+    "type": "lithium-library",
+    "license": "proprietary",
+    "authors": {
+      "name": "Atelier Disko",
+      "homepage": "http://atelierdisko.de"
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.5.0",
+        "davidpersson/li3_behaviors": "1.*",
+        "uor/li3_flash_message": "dev-master as 1.0.0-dev",
+        "unionofrad/lithium": "dev-dev as 1.0.0-dev",
+        "composer/installers": "~1.0",
+		"atelierdisko/base_address": "1.2.*"
+    },
+    "repositories": [
+      { "type": "vcs", "url": "https://github.com/uor/li3_flash_message" }
+   ]
+}

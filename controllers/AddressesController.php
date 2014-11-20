@@ -12,17 +12,17 @@
 
 namespace base_address\controllers;
 
-use base_address\models\Users;
-use base_address\models\VirtualUsers;
+use base_core\models\Users;
+use base_core\models\VirtualUsers;
 use base_address\models\Addresses;
 use base_address\models\Countries;
 use lithium\core\Environment;
 
-class AddressesController extends \base_address\controllers\BaseController {
+class AddressesController extends \base_core\controllers\BaseController {
 
-	use \base_address\controllers\AdminAddTrait;
-	use \base_address\controllers\AdminEditTrait;
-	use \base_address\controllers\AdminDeleteTrait;
+	use \base_core\controllers\AdminAddTrait;
+	use \base_core\controllers\AdminEditTrait;
+	use \base_core\controllers\AdminDeleteTrait;
 
 	public function admin_index() {
 		$data = Addresses::find('all', [

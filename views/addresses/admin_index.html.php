@@ -42,7 +42,7 @@ $this->set([
 					<?= $this->html->link($user->title(), [
 						'controller' => $user->isVirtual() ? 'VirtualUsers' : 'Users',
 						'action' => 'edit', 'id' => $user->id,
-						'library' => 'base_address'
+						'library' => 'base_core'
 					]) ?>
 				<?php else: ?>
 					-
@@ -53,8 +53,8 @@ $this->set([
 						<?= $this->date->format($item->created, 'date') ?>
 					</time>
 				<td class="actions">
-					<?= $this->html->link($t('delete'), ['id' => $item->id, 'action' => 'delete', 'library' => 'base_address'], ['class' => 'button']) ?>
-					<?= $this->html->link($t('edit'), ['id' => $item->id, 'action' => 'edit', 'library' => 'base_address'], ['class' => 'button']) ?>
+					<?= $this->html->link($t('delete'), ['id' => $item->id, 'action' => 'delete', 'library' => 'base_address'], ['class' => 'button delete']) ?>
+					<?= $this->html->link($t('open'), ['id' => $item->id, 'action' => 'edit', 'library' => 'base_address'], ['class' => 'button']) ?>
 			<?php endforeach ?>
 		</tbody>
 	</table>

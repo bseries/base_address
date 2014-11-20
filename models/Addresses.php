@@ -13,7 +13,7 @@
 namespace base_address\models;
 
 use lithium\core\Environment;
-use base_core\models\Countries;
+use base_address\models\Countries;
 use lithium\util\Validator;
 use lithium\g11n\Message;
 

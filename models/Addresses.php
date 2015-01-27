@@ -25,6 +25,18 @@ class Addresses extends \base_core\models\Base {
 		'base_core\extensions\data\behavior\Timestamp'
 	];
 
+	public $belongsTo = [
+		'User' => [
+			'to' => 'base_core\models\Users',
+			'key' => 'user_id'
+		],
+		'VirtualUser' => [
+			'to' => 'base_core\models\VirtualUsers',
+			'key' => 'virtual_user_id'
+		]
+	];
+
+
 	public static function init() {
 		extract(Message::aliases());
 		$model = static::_object();

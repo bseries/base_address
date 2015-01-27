@@ -8,10 +8,18 @@ $this->set([
 ]);
 
 ?>
-<article class="view-<?= $this->_config['controller'] . '-' . $this->_config['template'] ?> use-list">
+<article
+	class="use-index-table"
+	data-endpoint-sort="<?= $this->url([
+		'action' => 'index',
+		'page' => $paginator->getPages()->current,
+		'orderField' => '__ORDER_FIELD__',
+		'orderDirection' => '__ORDER_DIRECTION__'
+	]) ?>"
+>
 
 	<div class="top-actions">
-		<?= $this->html->link($t('new address'), ['action' => 'add', 'library' => 'base_address'], ['class' => 'button add']) ?>
+		<?= $this->html->link($t('new address'), ['action' => 'add'], ['class' => 'button add']) ?>
 	</div>
 
 	<div class="help">
@@ -22,16 +30,10 @@ $this->set([
 	<table>
 		<thead>
 			<tr>
-				<td data-sort="user" class="user list-sort"><?= $t('User') ?>
-				<td data-sort="address" class="emphasize address list-sort"><?= $t('Address') ?>
-				<td data-sort="created" class="date created list-sort desc"><?= $t('Created') ?>
+				<td data-sort="user.name" class="user table-sort"><?= $t('User') ?>
+				<td data-sort="city|street|name|company" class="emphasize address table-sort"><?= $t('Address') ?>
+				<td data-sort="modified" class="date table-sort desc"><?= $t('Modified') ?>
 				<td class="actions">
-					<?= $this->form->field('search', [
-						'type' => 'search',
-						'label' => false,
-						'placeholder' => $t('Filter'),
-						'class' => 'list-search'
-					]) ?>
 		</thead>
 		<tbody class="list">
 			<?php foreach ($data as $item): ?>
@@ -48,9 +50,9 @@ $this->set([
 					-
 				<?php endif ?>
 				<td class="emphasize address"><?= $item->format('oneline') ?>
-				<td class="date created">
-					<time datetime="<?= $this->date->format($item->created, 'w3c') ?>">
-						<?= $this->date->format($item->created, 'date') ?>
+				<td class="date">
+					<time datetime="<?= $this->date->format($item->modified, 'w3c') ?>">
+						<?= $this->date->format($item->modified, 'date') ?>
 					</time>
 				<td class="actions">
 					<?= $this->html->link($t('delete'), ['id' => $item->id, 'action' => 'delete', 'library' => 'base_address'], ['class' => 'button delete']) ?>
@@ -61,4 +63,6 @@ $this->set([
 	<?php else: ?>
 		<div class="none-available"><?= $t('No items available, yet.') ?></div>
 	<?php endif ?>
+
+	<?=$this->view()->render(['element' => 'paging'], compact('paginator'), ['library' => 'base_core']) ?>
 </article>

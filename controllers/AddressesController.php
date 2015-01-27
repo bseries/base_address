@@ -20,16 +20,10 @@ use lithium\core\Environment;
 
 class AddressesController extends \base_core\controllers\BaseController {
 
+	use \base_core\controllers\AdminIndexTrait;
 	use \base_core\controllers\AdminAddTrait;
 	use \base_core\controllers\AdminEditTrait;
 	use \base_core\controllers\AdminDeleteTrait;
-
-	public function admin_index() {
-		$data = Addresses::find('all', [
-			'order' => ['created' => 'DESC']
-		]);
-		return compact('data');
-	}
 
 	protected function _selects($item = null) {
 		$virtualUsers = [null => '-'] + VirtualUsers::find('list', ['order' => 'name']);

@@ -28,7 +28,7 @@ class Countries extends \base_core\models\Base {
 
 	public static function find($type, array $options = []) {
 		$options += ['locale' => Environment::get('locale')];
-		$available = Settings::read('availableCountries');
+		$available = explode(' ', PROJECT_COUNTRIES);
 
 		$cacheKey = 'countries_' . md5(serialize([
 			$available,

@@ -18,8 +18,6 @@ use lithium\util\Collection;
 use lithium\core\Environment;
 use lithium\storage\Cache;
 
-use base_core\extensions\cms\Settings;
-
 class Countries extends \base_core\models\Base {
 
 	protected $_meta = [

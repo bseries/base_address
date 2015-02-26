@@ -12,64 +12,25 @@
 
 namespace base_address\models;
 
-use Collator;
 use lithium\g11n\Catalog;
-use lithium\util\Collection;
-use lithium\core\Environment;
-use lithium\storage\Cache;
 
-class Countries extends \base_core\models\Base {
+class Countries extends \base_core\models\G11nBase {
 
-	protected $_meta = [
-		'connection' => false
-	];
+	protected static function _available() {
+		return explode(' ', PROJECT_COUNTRIES);
+	}
 
-	public static function find($type, array $options = []) {
-		$options += ['locale' => Environment::get('locale')];
-		$available = explode(' ', PROJECT_COUNTRIES);
+	protected static function _data(array $options) {
+		$data = [];
+		$results = Catalog::read(true, 'territory', $options['translate']);
 
-		$cacheKey = 'countries_' . md5(serialize([
-			$available,
-			$options['locale']
-		]));
-		if (!$data = Cache::read('default', $cacheKey)) {
-			$data = [];
-			$results = Catalog::read(true, 'territory', $options['locale']);
-
-			foreach ($results as $key => $value) {
-				if (is_numeric($key)) {
-					continue;
-				}
-				$data[$key] = $value;
-			}
-			if ($available) {
-				$all = $data;
-				$data = [];
-
-				foreach ($available as $currency) {
-					$data[$currency] = $all[$currency];
-				}
-			}
-			$collator = new Collator($options['locale']);
-			$collator->asort($data);
-
-			Cache::write('default', $cacheKey, $data, Cache::PERSIST);
+		foreach ($options['available'] as $available) {
+			$data[$available] = [
+				'id' => $available,
+				'name' => $results[$available]
+			];
 		}
-
-		if ($type == 'all') {
-			foreach ($data as $key => &$item) {
-				$item = static::create([
-					'id' => $key,
-					'name' => $item
-				]);
-			}
-			return new Collection(['data' => $data]);
-		} elseif ($type == 'list') {
-			return $data;
-		} elseif ($type == 'first') {
-			$item = $data[$key = $options['conditions']['id']];
-			return static::create(['id' => $key, 'name' => $item]);
-		}
+		return $data;
 	}
 }
 

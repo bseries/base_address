@@ -14,8 +14,19 @@ $this->set([
 	<?=$this->form->create($item) ?>
 		<?= $this->form->field('id', ['type' => 'hidden']) ?>
 
-		<div class="grid-row">
-			<div class="grid-column-left">
+		<div class="grid-row grid-row-last">
+			<section class="grid-column-left">
+				<?= $this->form->field('recipient', [
+					'type' => 'text',
+					'label' => $t('Recipient')
+				]) ?>
+				<?= $this->form->field('organization', [
+					'type' => 'text',
+					'label' => $t('Organization')
+				]) ?>
+			</section>
+
+			<section class="grid-column-right">
 				<div class="compound-users">
 					<?php
 						$user = $item->exists() ? $item->user() : false;
@@ -38,36 +49,11 @@ $this->set([
 						'checked' => $user ? !$user->isVirtual() : true
 					]) ?>
 				</div>
-			</div>
+			</section>
 		</div>
 
 		<div class="grid-row grid-row-last">
 			<section class="grid-column-left">
-				<?= $this->form->field('name', [
-					'type' => 'text',
-					'label' => $t('Name')
-				]) ?>
-				<?= $this->form->field('company', [
-					'type' => 'text',
-					'label' => $t('Company')
-				]) ?>
-				<?= $this->form->field('street', [
-					'type' => 'text',
-					'label' => $t('Street')
-				]) ?>
-				<?= $this->form->field('city', [
-					'type' => 'text',
-					'label' => $t('City')
-				]) ?>
-				<?= $this->form->field('zip', [
-					'type' => 'text',
-					'label' => $t('ZIP')
-				]) ?>
-				<?= $this->form->field('country', [
-					'type' => 'select',
-					'label' => $t('Country'),
-					'list' => $countries
-				]) ?>
 			</section>
 
 			<section class="grid-column-right">
@@ -75,6 +61,48 @@ $this->set([
 					'type' => 'phone',
 					'label' => $t('Phone')
 				]) ?>
+			</section>
+		</div>
+
+
+		<div class="grid-row grid-row-last">
+			<section class="grid-column-left">
+				<?= $this->form->field('address_line_1', [
+					'type' => 'text',
+					'label' => $t('Address Line')
+				]) ?>
+				<?= $this->form->field('address_line_2', [
+					'type' => 'text',
+					'label' => $t('Address Line (additional)')
+				]) ?>
+				<?= $this->form->field('locality', [
+					'type' => 'text',
+					'label' => $t('Locality')
+				]) ?>
+				<?= $this->form->field('dependent_locality', [
+					'type' => 'text',
+					'label' => $t('Dependent Locality')
+				]) ?>
+				<?= $this->form->field('postal_code', [
+					'type' => 'text',
+					'label' => $t('Postal Code')
+				]) ?>
+				<?= $this->form->field('sorting_code', [
+					'type' => 'text',
+					'label' => $t('Sorting Code')
+				]) ?>
+				<?= $this->form->field('administrative_area', [
+					'type' => 'text',
+					'label' => $t('Administrative Area')
+				]) ?>
+				<?= $this->form->field('country_code', [
+					'type' => 'select',
+					'label' => $t('Country'),
+					'list' => $countries
+				]) ?>
+			</section>
+
+			<section class="grid-column-right">
 			</section>
 		</div>
 		<div class="bottom-actions">

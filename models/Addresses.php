@@ -47,7 +47,7 @@ class Addresses extends \base_core\models\Base {
 		// The rest of the work is left to the addressing validator.
 
 		$model->validates['recipient'] = [
-			[
+			'or' => [
 				'recipientOrOrganization',
 				'on' => ['create', 'update'],
 				'message' => 'Bitte geben Sie einen Namen und/oder eine Firma an.'
@@ -58,13 +58,13 @@ class Addresses extends \base_core\models\Base {
 		});
 
 		$model->validates['address_line_1'] = [
-			[
+			'notEmpty' => [
 				'notEmpty',
 				'on' => ['create', 'update'],
 				'last' => true,
 				'message' => $t('This field cannot be empty.')
 			],
-			[
+			'streetNo' => [
 				'streetNo',
 				'on' => ['create', 'update'],
 				'message' => $t('Missing street number.')
@@ -75,7 +75,7 @@ class Addresses extends \base_core\models\Base {
 		});
 
 		$model->validates['locality'] = [
-			[
+			'notEmpty' => [
 				'notEmpty',
 				'on' => ['create', 'update'],
 				'message' => $t('This field cannot be empty.')
@@ -83,7 +83,7 @@ class Addresses extends \base_core\models\Base {
 		];
 
 		$model->validates['postal_code'] = [
-			[
+			'notEmpty' => [
 				'notEmpty',
 				'on' => ['create', 'update'],
 				'last' => true,
@@ -91,12 +91,12 @@ class Addresses extends \base_core\models\Base {
 			]
 		];
 		$model->validates['country'] = [
-			[
+			'notEmpty' => [
 				'notEmpty',
 				'on' => ['create', 'update'],
 				'message' => $t('A country must be selected.')
 			],
-			[
+			'countryCode' => [
 				'countryCode',
 				'on' => ['create', 'update'],
 				'message' => $t('Invalid country.')
@@ -109,7 +109,7 @@ class Addresses extends \base_core\models\Base {
 		// Phone
 
 		$model->validates['phone'] = [
-			[
+			'phone' => [
 				'phone',
 				'on' => ['create', 'update'],
 				'skipEmpty' => true,

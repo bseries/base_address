@@ -19,8 +19,6 @@ use lithium\g11n\Message;
 use CommerceGuys\Addressing\Model\Address as FormalAddress;
 use CommerceGuys\Addressing\Formatter\PostalFormatter;
 use CommerceGuys\Addressing\Provider\DataProvider;
-// use CommerceGuys\Addressing\Validator\Constraints\AddressFormat;
-// use CommerceGuys\Addressing\Validator\Constraints\Country;
 
 class Addresses extends \base_core\models\Base {
 
@@ -81,35 +79,16 @@ class Addresses extends \base_core\models\Base {
 				'notEmpty',
 				'on' => ['create', 'update'],
 				'message' => $t('This field cannot be empty.')
-			],
-			// [
-			// 	'formalLocality',
-			// 	'on' => ['create', 'update'],
-			// 	'message' => $t('Invalid locality.')
-			// ]
+			]
 		];
 
-		// $model->validates['dependent_locality'] = [
-		// 	[
-		// 		'skipEmpty' => true,
-		// 		'required' => false,
-		// 		'formalDependentLocality',
-		// 		'on' => ['create', 'update'],
-		// 		'message' => $t('Invalid dependent locality.')
-		// 	]
-		// ];
 		$model->validates['postal_code'] = [
 			[
 				'notEmpty',
 				'on' => ['create', 'update'],
 				'last' => true,
 				'message' => $t('This field cannot be empty.')
-			],
-			// [
-			// 	'formalPostalCode',
-			// 	'on' => ['create', 'update'],
-			// 	'message' => $t('Invalid postal code.')
-			// ]
+			]
 		];
 		$model->validates['country_code'] = [
 			[
@@ -236,73 +215,6 @@ class Addresses extends \base_core\models\Base {
 		}
 		return $value;
 	}
-
-//	public static function _validateFormal($address) {
-//		$validates = [];
-//
-//		$dataProvider = new DataProvider();
-//
-//		$values = static::_values($address);
-//		$countryCode = $address->getCountryCode();
-//
-//		$subdivisions = static::_buildSubdivisions($values, $countryCode, $dataProvider);
-//	}
-//
-//	protected static function _values($address) {
-//		$fields = [
-//			AddressField::ADMINISTRATIVE_AREA => 'administrativeArea',
-//			AddressField::LOCALITY => 'locality',
-//			AddressField::DEPENDENT_LOCALITY => 'dependentLocality',
-//			AddressField::POSTAL_CODE => 'postalCode',
-//			AddressField::SORTING_CODE => 'sortingCode',
-//			AddressField::ADDRESS => 'addressLine1',
-//			// skip address line 2
-//			AddressField::ORGANIZATION => 'organization',
-//			AddressField::RECIPIENT => 'recipient',
-//		];
-//
-//		$values = [];
-//        foreach ($fields as $key => $name) {
-//            $values[$key] = $address->{'get' . ucfirst($name)}();
-//		}
-//		return $values;
-//	}
-//
-//	protected static function _buildSubdivisions($values, $countryCode, DataProvider $dataProvider) {
-//		$subdivisionLevels = [
-//			'root',
-//			AddressField::ADMINISTRATIVE_AREA,
-//			AddressField::LOCALITY,
-//			AddressField::DEPENDENT_LOCALITY,
-//		];
-//
-//		$subdivisions = [];
-//
-//		foreach ($subdivisionLevels as $index => $fieldConstant) {
-//			$parentId = ($fieldConstant == 'root') ? 0 : $values[$fieldConstant];
-//			$children = $dataProvider->getSubdivisions($countryCode, $parentId);
-//			$nextIndex = $index + 1;
-//
-//			if (!$children || !isset($subdivisionLevels[$nextIndex])) {
-//				// This level has no children, stop.
-//				break;
-//			}
-//			$nextFieldConstant = $subdivisionLevels[$nextIndex];
-//
-//			if (empty($values[$nextFieldConstant])) {
-//				// The child value is empty, stop.
-//				break;
-//			}
-//
-//			foreach ($children as $child) {
-//				if ($child->getId() == $values[$nextFieldConstant]) {
-//					$subdivisions[] = $child;
-//					break;
-//				}
-//			}
-//		}
-//		return $subdivisions;
-//	}
 }
 
 Addresses::init();

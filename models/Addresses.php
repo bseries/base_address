@@ -159,9 +159,12 @@ class Addresses extends \base_core\models\Base {
 		return static::create($item);
 	}
 
-	public function format($entity, $type, $originCountryCode, $originLocale = null) {
+	public function format($entity, $type, $originCountry = null, $originLocale = null) {
 		if (!$originLocale) {
 			$originLocale = ($user = $entity->user()) ? $user->locale : Environment::get('locale');
+		}
+		if (!$originCountry) {
+			$originCountry = ($user = $entity->user()) ? $user->country : PROJECT_COUNTRY;
 		}
 		$formatter = new PostalFormatter(new DataProvider());
 
@@ -176,7 +179,7 @@ class Addresses extends \base_core\models\Base {
 			return implode(', ', array_filter($result));
 		}
 		if ($type == 'postal') {
-			return $formatter->format($entity->formal($originLocale), $originCountryCode, $originLocale);
+			return $formatter->format($entity->formal($originLocale), $originCountry, $originLocale);
 		}
 	}
 

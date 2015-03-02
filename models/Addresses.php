@@ -189,7 +189,7 @@ class Addresses extends \base_core\models\Base {
 		}
 		return (new FormalAddress())
 			->setLocale($locale)
-			->setCountryCode($entity->country_code)
+			->setCountryCode($entity->country) // compare country_code
 			->setAdministrativeAreay($entity->administrative_area)
 			->setLocality($entity->locality)
 			->setDependentLocality($entity->dependent_locality)

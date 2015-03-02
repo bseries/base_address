@@ -90,7 +90,7 @@ class Addresses extends \base_core\models\Base {
 				'message' => $t('This field cannot be empty.')
 			]
 		];
-		$model->validates['country_code'] = [
+		$model->validates['country'] = [
 			[
 				'notEmpty',
 				'on' => ['create', 'update'],
@@ -190,7 +190,7 @@ class Addresses extends \base_core\models\Base {
 		return (new FormalAddress())
 			->setLocale($locale)
 			->setCountryCode($entity->country) // compare country_code
-			->setAdministrativeAreay($entity->administrative_area)
+			->setAdministrativeArea($entity->administrative_area)
 			->setLocality($entity->locality)
 			->setDependentLocality($entity->dependent_locality)
 			->setPostalCode($entity->postal_code)

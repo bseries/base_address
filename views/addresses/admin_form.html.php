@@ -95,7 +95,7 @@ $this->set([
 					'type' => 'text',
 					'label' => $t('Administrative Area')
 				]) ?>
-				<?= $this->form->field('country_code', [
+				<?= $this->form->field('country', [
 					'type' => 'select',
 					'label' => $t('Country'),
 					'list' => $countries

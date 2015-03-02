@@ -48,7 +48,7 @@ class Addresses extends \base_core\models\Base {
 
 		$model->validates['recipient'] = [
 			[
-				'nameOrCompany',
+				'recipientOrOrganization',
 				'on' => ['create', 'update'],
 				'message' => 'Bitte geben Sie einen Namen und/oder eine Firma an.'
 			]

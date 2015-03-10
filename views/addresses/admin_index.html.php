@@ -35,7 +35,7 @@ $this->set([
 				<td data-sort="modified" class="date table-sort desc"><?= $t('Modified') ?>
 				<td class="actions">
 		</thead>
-		<tbody class="list">
+		<tbody>
 			<?php foreach ($data as $item): ?>
 				<?php $user = $item->user() ?>
 			<tr>

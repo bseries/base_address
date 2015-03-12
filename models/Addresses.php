@@ -161,10 +161,10 @@ class Addresses extends \base_core\models\Base {
 
 	public function format($entity, $type, $originCountry = null, $originLocale = null) {
 		if (!$originLocale) {
-			$originLocale = ($user = $entity->user()) ? $user->locale : Environment::get('locale');
+			$originLocale = PROJECT_LOCALE;
 		}
 		if (!$originCountry) {
-			$originCountry = ($user = $entity->user()) ? $user->country : PROJECT_COUNTRY;
+			$originCountry = PROJECT_COUNTRY;
 		}
 		$formatter = new PostalFormatter(new DataProvider());
 

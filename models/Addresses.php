@@ -50,7 +50,7 @@ class Addresses extends \base_core\models\Base {
 			'or' => [
 				'recipientOrOrganization',
 				'on' => ['create', 'update'],
-				'message' => $t('Please provide either name or company.')
+				'message' => $t('Please provide either name or company.', ['scope' => 'base_address'])
 			]
 		];
 		Validator::add('recipientOrOrganization', function($value, $format, $options) {
@@ -62,12 +62,12 @@ class Addresses extends \base_core\models\Base {
 				'notEmpty',
 				'on' => ['create', 'update'],
 				'last' => true,
-				'message' => $t('This field cannot be empty.')
+				'message' => $t('This field cannot be empty.', ['scope' => 'base_address'])
 			],
 			'streetNo' => [
 				'streetNo',
 				'on' => ['create', 'update'],
-				'message' => $t('Missing street number.')
+				'message' => $t('Missing street number.', ['scope' => 'base_address'])
 			],
 		];
 		Validator::add('streetNo', function($value, $format, $options) {
@@ -78,7 +78,7 @@ class Addresses extends \base_core\models\Base {
 			'notEmpty' => [
 				'notEmpty',
 				'on' => ['create', 'update'],
-				'message' => $t('This field cannot be empty.')
+				'message' => $t('This field cannot be empty.', ['scope' => 'base_address'])
 			]
 		];
 
@@ -87,19 +87,19 @@ class Addresses extends \base_core\models\Base {
 				'notEmpty',
 				'on' => ['create', 'update'],
 				'last' => true,
-				'message' => $t('This field cannot be empty.')
+				'message' => $t('This field cannot be empty.', ['scope' => 'base_address'])
 			]
 		];
 		$model->validates['country'] = [
 			'notEmpty' => [
 				'notEmpty',
 				'on' => ['create', 'update'],
-				'message' => $t('A country must be selected.')
+				'message' => $t('A country must be selected.', ['scope' => 'base_address'])
 			],
 			'countryCode' => [
 				'countryCode',
 				'on' => ['create', 'update'],
-				'message' => $t('Invalid country.')
+				'message' => $t('Invalid country.', ['scope' => 'base_address'])
 			]
 		];
 		Validator::add('countryCode', function($value, $format, $options) {
@@ -113,7 +113,7 @@ class Addresses extends \base_core\models\Base {
 				'phone',
 				'on' => ['create', 'update'],
 				'skipEmpty' => true,
-				'message' => $t('The field is not correctly formatted.')
+				'message' => $t('The field is not correctly formatted.', ['scope' => 'base_address'])
 			],
 		];
 	}

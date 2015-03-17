@@ -1,0 +1,141 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Atelier Disko
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: base_address 1.0\n"
+"Report-Msgid-Bugs-To: info@atelierdisko.de\n"
+"POT-Creation-Date: 2015-03-17 16:41+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: config/panes.php:19
+msgid "Addresses"
+msgstr ""
+
+#: models/Addresses.php:53
+msgid "Please provide either name or company."
+msgstr ""
+
+#: models/Addresses.php:65 models/Addresses.php:81 models/Addresses.php:90
+msgid "This field cannot be empty."
+msgstr ""
+
+#: models/Addresses.php:70
+msgid "Missing street number."
+msgstr ""
+
+#: models/Addresses.php:97
+msgid "A country must be selected."
+msgstr ""
+
+#: models/Addresses.php:102
+msgid "Invalid country."
+msgstr ""
+
+#: models/Addresses.php:116
+msgid "The field is not correctly formatted."
+msgstr ""
+
+#: views/addresses/admin_form.html.php:14
+msgid "address"
+msgstr ""
+
+#: views/addresses/admin_form.html.php:27
+msgid "Recipient"
+msgstr ""
+
+#: views/addresses/admin_form.html.php:31
+msgid "Organization"
+msgstr ""
+
+#: views/addresses/admin_form.html.php:42
+#: views/addresses/admin_index.html.php:39
+msgid "User"
+msgstr ""
+
+#: views/addresses/admin_form.html.php:54
+msgid "real user"
+msgstr ""
+
+#: views/addresses/admin_form.html.php:68
+msgid "Phone"
+msgstr ""
+
+#: views/addresses/admin_form.html.php:78
+msgid "Address Line"
+msgstr ""
+
+#: views/addresses/admin_form.html.php:82
+msgid "Address Line (additional)"
+msgstr ""
+
+#: views/addresses/admin_form.html.php:86
+msgid "Locality"
+msgstr ""
+
+#: views/addresses/admin_form.html.php:90
+msgid "Dependent Locality"
+msgstr ""
+
+#: views/addresses/admin_form.html.php:94
+msgid "Postal Code"
+msgstr ""
+
+#: views/addresses/admin_form.html.php:98
+msgid "Sorting Code"
+msgstr ""
+
+#: views/addresses/admin_form.html.php:102
+msgid "Administrative Area"
+msgstr ""
+
+#: views/addresses/admin_form.html.php:106
+msgid "Country"
+msgstr ""
+
+#: views/addresses/admin_form.html.php:115
+msgid "save"
+msgstr ""
+
+#: views/addresses/admin_index.html.php:12
+msgid "addresses"
+msgstr ""
+
+#: views/addresses/admin_index.html.php:28
+msgid "new address"
+msgstr ""
+
+#: views/addresses/admin_index.html.php:32
+msgid ""
+"Addresses can be owned by a user but addresses without an owner are "
+"possible, too."
+msgstr ""
+
+#: views/addresses/admin_index.html.php:40
+msgid "Address"
+msgstr ""
+
+#: views/addresses/admin_index.html.php:41
+msgid "Modified"
+msgstr ""
+
+#: views/addresses/admin_index.html.php:64
+msgid "delete"
+msgstr ""
+
+#: views/addresses/admin_index.html.php:65
+msgid "open"
+msgstr ""
+
+#: views/addresses/admin_index.html.php:70
+msgid "No items available, yet."
+msgstr ""

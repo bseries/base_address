@@ -151,7 +151,9 @@ class Addresses extends \base_core\models\Base {
 				continue;
 			}
 			if (strpos($field, $prefix) !== false) {
-				$field = str_replace($prefix, '', $field);
+				// Field might be address_address_line_1 thus we cannot
+				// use str_replace().
+				$field = preg_replace('/^' . $prefix . '/', '', $field);
 				$item[$field] = $value;
 				continue;
 			}

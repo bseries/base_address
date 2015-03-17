@@ -17,7 +17,7 @@ use lithium\util\Validator;
 use lithium\util\Inflector;
 use lithium\g11n\Message;
 use CommerceGuys\Addressing\Model\Address as FormalAddress;
-use CommerceGuys\Addressing\Formatter\PostalFormatter;
+use CommerceGuys\Addressing\Formatter\PostalLabelFormatter;
 use CommerceGuys\Addressing\Provider\DataProvider;
 
 class Addresses extends \base_core\models\Base {
@@ -159,14 +159,18 @@ class Addresses extends \base_core\models\Base {
 		return static::create($item);
 	}
 
-	public function format($entity, $type, $originCountry = null, $originLocale = null) {
+	public function format($entity, $type, $originLocale = null, $originCountry = null) {
 		if (!$originLocale) {
 			$originLocale = PROJECT_LOCALE;
 		}
 		if (!$originCountry) {
 			$originCountry = PROJECT_COUNTRY;
 		}
-		$formatter = new PostalFormatter(new DataProvider());
+		$formatter = new PostalLabelFormatter(
+			new DataProvider(),
+			$originCountry,
+			$originLocale
+		);
 
 		if ($type == 'oneline') {
 			$result = [];
@@ -179,7 +183,7 @@ class Addresses extends \base_core\models\Base {
 			return implode(', ', array_filter($result));
 		}
 		if ($type == 'postal') {
-			return $formatter->format($entity->formal($originLocale), $originCountry, $originLocale);
+			return $formatter->format($entity->formal($originLocale));
 		}
 	}
 

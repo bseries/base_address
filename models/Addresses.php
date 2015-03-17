@@ -50,7 +50,7 @@ class Addresses extends \base_core\models\Base {
 			'or' => [
 				'recipientOrOrganization',
 				'on' => ['create', 'update'],
-				'message' => 'Bitte geben Sie einen Namen und/oder eine Firma an.'
+				'message' => $t('Please provide either name or company.')
 			]
 		];
 		Validator::add('recipientOrOrganization', function($value, $format, $options) {

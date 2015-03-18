@@ -41,6 +41,13 @@ $this->set([
 				<td data-sort="locality|address_line_1|recipient|organization" class="emphasize address table-sort"><?= $t('Address') ?>
 				<td data-sort="modified" class="date table-sort desc"><?= $t('Modified') ?>
 				<td class="actions">
+					<?= $this->form->field('search', [
+						'type' => 'search',
+						'label' => false,
+						'placeholder' => $t('Filter'),
+						'class' => 'table-search',
+						'value' => $this->_request->filter
+					]) ?>
 		</thead>
 		<tbody>
 			<?php foreach ($data as $item): ?>

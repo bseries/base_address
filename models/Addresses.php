@@ -74,14 +74,23 @@ class Addresses extends \base_core\models\Base {
 				'last' => true,
 				'message' => $t('This field cannot be empty.', ['scope' => 'base_address'])
 			],
+			'streetName' => [
+				'streetName',
+				'on' => ['create', 'update'],
+				'last' => true,
+				'message' => $t('Missing street name.', ['scope' => 'base_address'])
+			],
 			'streetNo' => [
 				'streetNo',
 				'on' => ['create', 'update'],
 				'message' => $t('Missing street number.', ['scope' => 'base_address'])
 			],
 		];
+		Validator::add('streetName', function($value, $format, $options) {
+			return preg_match('/^[a-z]+/i', $value);
+		});
 		Validator::add('streetNo', function($value, $format, $options) {
-			return preg_match('/\s[0-9]/', $value);
+			return preg_match('/[0-9]$/', $value);
 		});
 
 		$model->validates['locality'] = [

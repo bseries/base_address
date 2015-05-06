@@ -18,6 +18,9 @@
 		"commerceguys/addressing": "0.6.*",
 		"symfony/intl": "*"
     },
+    "require-dev": {
+        "phpunit/phpunit": ">=4.0.0"
+    },
     "repositories": [
       { "type": "vcs", "url": "git@bitbucket.org:atelierdisko/base_core.git" }
    ]

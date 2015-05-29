@@ -87,7 +87,7 @@ class Addresses extends \base_core\models\Base {
 			],
 		];
 		Validator::add('streetName', function($value, $format, $options) {
-			return preg_match('/^[a-z]+/i', $value);
+			return preg_match('/^[a-z]+/iu', $value);
 		});
 		Validator::add('streetNo', function($value, $format, $options) {
 			return preg_match('/\s[0-9]+/', $value);

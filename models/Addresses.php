@@ -18,7 +18,9 @@ use lithium\util\Inflector;
 use lithium\g11n\Message;
 use CommerceGuys\Addressing\Model\Address as FormalAddress;
 use CommerceGuys\Addressing\Formatter\PostalLabelFormatter;
-use CommerceGuys\Addressing\Provider\DataProvider;
+use CommerceGuys\Addressing\Repository\AddressFormatRepository;
+use CommerceGuys\Addressing\Repository\CountryRepository;
+use CommerceGuys\Addressing\Repository\SubdivisionRepository;
 
 class Addresses extends \base_core\models\Base {
 
@@ -188,7 +190,9 @@ class Addresses extends \base_core\models\Base {
 			$originCountry = PROJECT_COUNTRY;
 		}
 		$formatter = new PostalLabelFormatter(
-			new DataProvider(),
+			new AddressFormatRepository(),
+			new CountryRepository(),
+			new SubdivisionRepository(),
 			$originCountry,
 			$originLocale
 		);

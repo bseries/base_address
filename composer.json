@@ -20,6 +20,6 @@
     },
     "repositories": [
       { "type": "vcs", "url": "git@code.atelierdisko:base_core" },
-      { "type": "vcs", "url": "git@code.atelierdisko:addressing" }
+      { "type": "vcs", "url": "https://github.com/atelierdisko/addressing.git" }
    ]
 }

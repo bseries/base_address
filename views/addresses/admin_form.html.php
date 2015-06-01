@@ -109,6 +109,12 @@ $this->set([
 			</section>
 
 			<section class="grid-column-right">
+				<?= $this->form->field('address', [
+					'type' => 'textarea',
+					'label' => $t('Rendered Postal'),
+					'disabled' => true,
+					'value' => $item->format('postal', $locale)
+				]) ?>
 			</section>
 		</div>
 		<div class="bottom-actions">

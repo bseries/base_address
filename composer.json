@@ -15,10 +15,11 @@
         "unionofrad/lithium": "dev-dev as 1.0.0-dev",
         "unionofrad/li3_cldr": "dev-master",
 		"atelierdisko/base_core": "1.3.*@dev",
-		"commerceguys/addressing": "dev-master#ced8bbae60259cf25da6034e5492b9d5de18e03f",
+		"commerceguys/addressing": "dev-master",
 		"symfony/intl": "*"
     },
     "repositories": [
-      { "type": "vcs", "url": "git@bitbucket.org:atelierdisko/base_core.git" }
+      { "type": "vcs", "url": "git@code.atelierdisko:base_core" },
+      { "type": "vcs", "url": "git@code.atelierdisko:addressing" }
    ]
 }

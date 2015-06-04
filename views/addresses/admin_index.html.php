@@ -37,7 +37,7 @@ $this->set([
 	<table>
 		<thead>
 			<tr>
-				<td data-sort="user.name" class="user table-sort"><?= $t('User') ?>
+				<td data-sort="User.name" class="user table-sort"><?= $t('User') ?>
 				<td data-sort="locality|address_line_1|recipient|organization" class="emphasize address table-sort"><?= $t('Address') ?>
 				<td data-sort="modified" class="date table-sort desc"><?= $t('Modified') ?>
 				<td class="actions">

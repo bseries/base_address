@@ -10,7 +10,7 @@
     },
     "require": {
         "php": ">=5.5.0",
-        "composer/installers": "1.0.*@stable",
+        "composer/installers": "1.*@stable",
         "atelierdisko/li3_flash_message": "1.0.*@beta",
         "unionofrad/lithium": "1.0.*@dev",
         "unionofrad/li3_cldr": "1.0.*@dev",

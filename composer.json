@@ -14,7 +14,7 @@
         "atelierdisko/li3_flash_message": "1.0.*@beta",
         "unionofrad/lithium": "1.0.*@dev",
         "unionofrad/li3_cldr": "1.0.*@dev",
-		"atelierdisko/base_core": "1.3.*",
+		"atelierdisko/base_core": "1.4.*",
 		"commerceguys/addressing": "dev-master#4dee4fead0a9287b7c68d4f12d65e6288b70a5a1",
 		"symfony/intl": "*"
     },

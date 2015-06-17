@@ -26,7 +26,7 @@ $this->set([
 >
 
 	<div class="top-actions">
-		<?= $this->html->link($t('new address'), ['action' => 'add'], ['class' => 'button add']) ?>
+		<?= $this->html->link($t('address'), ['action' => 'add'], ['class' => 'button add']) ?>
 	</div>
 
 	<div class="help">

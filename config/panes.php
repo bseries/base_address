@@ -21,7 +21,8 @@ Panes::register('access.addresses', [
 		'library' => 'base_address',
 		'controller' => 'Addresses', 'action' => 'index',
 		'admin' => true
-	]
+	],
+	'weight' => 3
 ]);
 
 ?>

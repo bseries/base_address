@@ -7,135 +7,147 @@ msgid ""
 msgstr ""
 "Project-Id-Version: base_address 1.0\n"
 "Report-Msgid-Bugs-To: info@atelierdisko.de\n"
-"POT-Creation-Date: 2015-03-17 16:41+0100\n"
-"PO-Revision-Date: 2015-03-17 16:41+0100\n"
-"Last-Translator: Automatically generated\n"
+"POT-Creation-Date: 2015-07-06 14:42+0200\n"
+"PO-Revision-Date: 2015-07-06 14:46+0100\n"
+"Last-Translator: David Persson <davidpersson@gmx.de>\n"
 "Language-Team: none\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.5.7\n"
 
 #: config/panes.php:19
 msgid "Addresses"
-msgstr ""
+msgstr "Adressen"
 
-#: models/Addresses.php:53
+#: models/Addresses.php:64
 msgid "Please provide either name or company."
-msgstr ""
+msgstr "Das Feld für Name oder Unternehmen darf nicht leer sein."
 
-#: models/Addresses.php:65 models/Addresses.php:81 models/Addresses.php:90
+#: models/Addresses.php:76 models/Addresses.php:101 models/Addresses.php:110
 msgid "This field cannot be empty."
-msgstr ""
+msgstr "Dieses Feld darf nicht leer sein."
 
-#: models/Addresses.php:70
+#: models/Addresses.php:82
+msgid "Missing street name."
+msgstr "Straßenname fehlt."
+
+#: models/Addresses.php:87
 msgid "Missing street number."
-msgstr ""
+msgstr "Hausnummer fehlt."
 
-#: models/Addresses.php:97
+#: models/Addresses.php:117
 msgid "A country must be selected."
-msgstr ""
+msgstr "Sie müssen ein Land auswählen."
 
-#: models/Addresses.php:102
+#: models/Addresses.php:122
 msgid "Invalid country."
-msgstr ""
+msgstr "Ungültiges Land."
 
-#: models/Addresses.php:116
+#: models/Addresses.php:136
 msgid "The field is not correctly formatted."
-msgstr ""
+msgstr "Dieses Feld weißt nicht das korrekte Format auf."
 
 #: views/addresses/admin_form.html.php:14
+#: views/addresses/admin_index.html.php:29
 msgid "address"
-msgstr ""
+msgstr "Adresse"
 
 #: views/addresses/admin_form.html.php:27
 msgid "Recipient"
-msgstr ""
+msgstr "Empfänger"
 
 #: views/addresses/admin_form.html.php:31
 msgid "Organization"
-msgstr ""
+msgstr "Unternehmen"
 
 #: views/addresses/admin_form.html.php:42
-#: views/addresses/admin_index.html.php:39
+#: views/addresses/admin_index.html.php:40
 msgid "User"
-msgstr ""
+msgstr "Benutzer"
 
 #: views/addresses/admin_form.html.php:54
 msgid "real user"
-msgstr ""
+msgstr "echter Benutzer"
 
 #: views/addresses/admin_form.html.php:68
 msgid "Phone"
-msgstr ""
+msgstr "Telefon"
 
 #: views/addresses/admin_form.html.php:78
 msgid "Address Line"
-msgstr ""
+msgstr "Adresszeile"
 
 #: views/addresses/admin_form.html.php:82
 msgid "Address Line (additional)"
-msgstr ""
+msgstr "zusätzliche Adresszeile"
 
 #: views/addresses/admin_form.html.php:86
 msgid "Locality"
-msgstr ""
+msgstr "Stadt"
 
 #: views/addresses/admin_form.html.php:90
 msgid "Dependent Locality"
-msgstr ""
+msgstr "Stadteil"
 
 #: views/addresses/admin_form.html.php:94
 msgid "Postal Code"
-msgstr ""
+msgstr "Postleitzahl"
 
 #: views/addresses/admin_form.html.php:98
 msgid "Sorting Code"
-msgstr ""
+msgstr "Sortiercode"
 
 #: views/addresses/admin_form.html.php:102
 msgid "Administrative Area"
-msgstr ""
+msgstr "Administration"
 
 #: views/addresses/admin_form.html.php:106
 msgid "Country"
-msgstr ""
+msgstr "Land"
 
-#: views/addresses/admin_form.html.php:115
+#: views/addresses/admin_form.html.php:114
+msgid "Rendered Postal"
+msgstr "Postadresse"
+
+#: views/addresses/admin_form.html.php:121
 msgid "save"
-msgstr ""
+msgstr "speichern"
 
 #: views/addresses/admin_index.html.php:12
 msgid "addresses"
-msgstr ""
+msgstr "Adressen"
 
-#: views/addresses/admin_index.html.php:28
-msgid "new address"
-msgstr ""
-
-#: views/addresses/admin_index.html.php:32
+#: views/addresses/admin_index.html.php:33
 msgid ""
 "Addresses can be owned by a user but addresses without an owner are "
 "possible, too."
 msgstr ""
-
-#: views/addresses/admin_index.html.php:40
-msgid "Address"
-msgstr ""
+"Adressen können einem Benutzer zugeordnet sein, Adressen ohne Benutzer sind "
+"aber auch möglich."
 
 #: views/addresses/admin_index.html.php:41
+msgid "Address"
+msgstr "Adressse"
+
+#: views/addresses/admin_index.html.php:42
 msgid "Modified"
-msgstr ""
+msgstr "Bearbeitet"
 
-#: views/addresses/admin_index.html.php:64
+#: views/addresses/admin_index.html.php:47
+msgid "Filter"
+msgstr "Filter"
+
+#: views/addresses/admin_index.html.php:72
 msgid "delete"
-msgstr ""
+msgstr "löschen"
 
-#: views/addresses/admin_index.html.php:65
+#: views/addresses/admin_index.html.php:73
 msgid "open"
-msgstr ""
+msgstr "öffnen"
 
-#: views/addresses/admin_index.html.php:70
+#: views/addresses/admin_index.html.php:78
 msgid "No items available, yet."
-msgstr ""
+msgstr "Es sind noch keine Element verfügbar."

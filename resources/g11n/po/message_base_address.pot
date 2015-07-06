@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: base_address 1.0\n"
 "Report-Msgid-Bugs-To: info@atelierdisko.de\n"
-"POT-Creation-Date: 2015-03-17 16:41+0100\n"
+"POT-Creation-Date: 2015-07-06 14:42+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,31 +21,36 @@ msgstr ""
 msgid "Addresses"
 msgstr ""
 
-#: models/Addresses.php:53
+#: models/Addresses.php:64
 msgid "Please provide either name or company."
 msgstr ""
 
-#: models/Addresses.php:65 models/Addresses.php:81 models/Addresses.php:90
+#: models/Addresses.php:76 models/Addresses.php:101 models/Addresses.php:110
 msgid "This field cannot be empty."
 msgstr ""
 
-#: models/Addresses.php:70
+#: models/Addresses.php:82
+msgid "Missing street name."
+msgstr ""
+
+#: models/Addresses.php:87
 msgid "Missing street number."
 msgstr ""
 
-#: models/Addresses.php:97
+#: models/Addresses.php:117
 msgid "A country must be selected."
 msgstr ""
 
-#: models/Addresses.php:102
+#: models/Addresses.php:122
 msgid "Invalid country."
 msgstr ""
 
-#: models/Addresses.php:116
+#: models/Addresses.php:136
 msgid "The field is not correctly formatted."
 msgstr ""
 
 #: views/addresses/admin_form.html.php:14
+#: views/addresses/admin_index.html.php:29
 msgid "address"
 msgstr ""
 
@@ -58,7 +63,7 @@ msgid "Organization"
 msgstr ""
 
 #: views/addresses/admin_form.html.php:42
-#: views/addresses/admin_index.html.php:39
+#: views/addresses/admin_index.html.php:40
 msgid "User"
 msgstr ""
 
@@ -102,7 +107,11 @@ msgstr ""
 msgid "Country"
 msgstr ""
 
-#: views/addresses/admin_form.html.php:115
+#: views/addresses/admin_form.html.php:114
+msgid "Rendered Postal"
+msgstr ""
+
+#: views/addresses/admin_form.html.php:121
 msgid "save"
 msgstr ""
 
@@ -110,32 +119,32 @@ msgstr ""
 msgid "addresses"
 msgstr ""
 
-#: views/addresses/admin_index.html.php:28
-msgid "new address"
-msgstr ""
-
-#: views/addresses/admin_index.html.php:32
+#: views/addresses/admin_index.html.php:33
 msgid ""
 "Addresses can be owned by a user but addresses without an owner are "
 "possible, too."
 msgstr ""
 
-#: views/addresses/admin_index.html.php:40
+#: views/addresses/admin_index.html.php:41
 msgid "Address"
 msgstr ""
 
-#: views/addresses/admin_index.html.php:41
+#: views/addresses/admin_index.html.php:42
 msgid "Modified"
 msgstr ""
 
-#: views/addresses/admin_index.html.php:64
+#: views/addresses/admin_index.html.php:47
+msgid "Filter"
+msgstr ""
+
+#: views/addresses/admin_index.html.php:72
 msgid "delete"
 msgstr ""
 
-#: views/addresses/admin_index.html.php:65
+#: views/addresses/admin_index.html.php:73
 msgid "open"
 msgstr ""
 
-#: views/addresses/admin_index.html.php:70
+#: views/addresses/admin_index.html.php:78
 msgid "No items available, yet."
 msgstr ""

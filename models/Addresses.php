@@ -24,7 +24,7 @@ use CommerceGuys\Addressing\Repository\SubdivisionRepository;
 
 class Addresses extends \base_core\models\Base {
 
-	protected static $_actsAs = [
+	public $actsAs = [
 		'base_core\extensions\data\behavior\User',
 		'base_core\extensions\data\behavior\Timestamp',
 		'base_core\extensions\data\behavior\Searchable' => [

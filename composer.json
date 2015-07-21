@@ -17,7 +17,7 @@
         "unionofrad/lithium": "1.0.*@dev",
         "unionofrad/li3_cldr": "1.0.*@dev",
 		"atelierdisko/base_core": "1.4.*",
-		"commerceguys/addressing": "0.x-dev#4dee4fead0a9287b7c68d4f12d65e6288b70a5a1",
+		"commerceguys/addressing": "0.7.*",
 		"symfony/intl": "*"
     },
     "require-dev": {

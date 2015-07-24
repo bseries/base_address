@@ -148,7 +148,8 @@ class Addresses extends \base_core\models\Base {
 		]);
 	}
 
-	public function copy($entity, $object, $prefix = null) {
+	// @param $target Entity|array
+	public function copy($entity, $target, $prefix = null) {
 		$skipFields = ['id', 'user_id', 'created', 'modified'];
 
 		foreach ($entity->data() as $field => $value) {
@@ -156,9 +157,14 @@ class Addresses extends \base_core\models\Base {
 				continue;
 			}
 			$field = $prefix ? $prefix . $field : $field;
-			$object->{$field} = $value;
+
+			if (is_object($target)) {
+				$target->{$field} = $value;
+			} else {
+				$target[$field] = $value;
+			}
 		}
-		return $object;
+		return $target;
 	}
 
 	public static function createFromPrefixed($prefix, array $data) {

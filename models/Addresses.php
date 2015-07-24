@@ -150,7 +150,7 @@ class Addresses extends \base_core\models\Base {
 
 	// @param $target Entity|array
 	public function copy($entity, $target, $prefix = null) {
-		$skipFields = ['id', 'user_id', 'created', 'modified'];
+		$skipFields = ['id', 'user_id', 'virtual_user_id', 'created', 'modified'];
 
 		foreach ($entity->data() as $field => $value) {
 			if (in_array($field, $skipFields)) {

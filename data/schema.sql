@@ -1,7 +1,6 @@
 CREATE TABLE `addresses` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) unsigned DEFAULT NULL,
-  `virtual_user_id` int(11) unsigned DEFAULT NULL,
+  `user_id` int(11) unsigned NOT NULL,
   `recipient` varchar(250) DEFAULT '',
   `organization` varchar(250) DEFAULT NULL,
   `address_line_1` varchar(250) DEFAULT NULL,
@@ -16,6 +15,5 @@ CREATE TABLE `addresses` (
   `created` datetime NOT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `user_id` (`user_id`),
-  KEY `virtual_user_id` (`virtual_user_id`)
+  KEY `user_id` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

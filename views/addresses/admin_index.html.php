@@ -53,7 +53,7 @@ $this->set([
 			<?php foreach ($data as $item): ?>
 			<tr>
 				<td class="user">
-					<?= $this->user->link($user) ?>
+					<?= $this->user->link($item->user()) ?>
 				<td class="emphasize address"><?= $item->format('oneline') ?>
 				<td class="date">
 					<time datetime="<?= $this->date->format($item->modified, 'w3c') ?>">

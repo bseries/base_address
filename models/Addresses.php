@@ -25,7 +25,7 @@ use CommerceGuys\Addressing\Repository\SubdivisionRepository;
 class Addresses extends \base_core\models\Base {
 
 	protected $_actsAs = [
-		'base_core\extensions\data\behavior\User',
+		'base_core\extensions\data\behavior\RelationsPlus',
 		'base_core\extensions\data\behavior\Timestamp',
 		'base_core\extensions\data\behavior\Searchable' => [
 			'fields' => [
@@ -43,10 +43,6 @@ class Addresses extends \base_core\models\Base {
 		'User' => [
 			'to' => 'base_core\models\Users',
 			'key' => 'user_id'
-		],
-		'VirtualUser' => [
-			'to' => 'base_core\models\VirtualUsers',
-			'key' => 'virtual_user_id'
 		]
 	];
 
@@ -150,7 +146,7 @@ class Addresses extends \base_core\models\Base {
 
 	// @param $target Entity|array
 	public function copy($entity, $target, $prefix = null) {
-		$skipFields = ['id', 'user_id', 'virtual_user_id', 'created', 'modified'];
+		$skipFields = ['id', 'user_id', 'created', 'modified'];
 
 		foreach ($entity->data() as $field => $value) {
 			if (in_array($field, $skipFields)) {
@@ -171,7 +167,7 @@ class Addresses extends \base_core\models\Base {
 		$item = [];
 
 		foreach ($data as $field => $value) {
-			// Also includes unprefixed virtual_user_id and user_id.
+			// Also includes unprefixed user_id.
 			if (strpos($field, 'user_') !== false) {
 				$item[$field] = $value;
 				continue;

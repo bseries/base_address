@@ -24,7 +24,6 @@ class Contacts extends \base_core\models\Base {
 		$fields = array_diff(array_keys(Addresses::schema()->fields()), [
 			'id',
 			'user_id',
-			'virtual_user_id',
 			'created',
 			'modified'
 		]);

@@ -51,18 +51,9 @@ $this->set([
 		</thead>
 		<tbody>
 			<?php foreach ($data as $item): ?>
-				<?php $user = $item->user() ?>
 			<tr>
 				<td class="user">
-				<?php if ($user): ?>
-					<?= $this->html->link($user->title(), [
-						'controller' => $user->isVirtual() ? 'VirtualUsers' : 'Users',
-						'action' => 'edit', 'id' => $user->id,
-						'library' => 'base_core'
-					]) ?>
-				<?php else: ?>
-					-
-				<?php endif ?>
+					<?= $this->user->link($user) ?>
 				<td class="emphasize address"><?= $item->format('oneline') ?>
 				<td class="date">
 					<time datetime="<?= $this->date->format($item->modified, 'w3c') ?>">

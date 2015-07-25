@@ -13,7 +13,6 @@
 namespace base_address\controllers;
 
 use base_core\models\Users;
-use base_core\models\VirtualUsers;
 use base_address\models\Addresses;
 use base_address\models\Countries;
 use lithium\core\Environment;
@@ -26,11 +25,10 @@ class AddressesController extends \base_core\controllers\BaseController {
 	use \base_core\controllers\AdminDeleteTrait;
 
 	protected function _selects($item = null) {
-		$virtualUsers = [null => '-'] + VirtualUsers::find('list', ['order' => 'name']);
 		$users = [null => '-'] + Users::find('list', ['order' => 'name']);
 		$countries = Countries::find('list');
 
-		return compact('users', 'virtualUsers', 'countries');
+		return compact('users', 'countries');
 	}
 }
 

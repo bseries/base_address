@@ -183,6 +183,7 @@ class Addresses extends \base_core\models\Base {
 		return static::create($item);
 	}
 
+	// $type is either postal, oneline or compact
 	public function format($entity, $type, $originLocale = null, $originCountry = null) {
 		if (!$originLocale) {
 			$originLocale = PROJECT_LOCALE;
@@ -198,19 +199,19 @@ class Addresses extends \base_core\models\Base {
 			$originLocale
 		);
 
-		if ($type == 'oneline') {
-			$result = [];
-
-			$result[] = $entity->organization;
-			$result[] = $entity->recipient;
-			$result[] = $entity->address_line_1;
-			$result[] = $entity->locality;
-
-			return implode(', ', array_filter($result));
-		}
-		if ($type == 'postal') {
+		if ($type === 'postal') {
 			return $formatter->format($entity->formal($originLocale));
 		}
+		if ($type === 'oneline') {
+			return str_replace("\n", ' · ', $formatter->format($entity->formal($originLocale)));
+		}
+		$result = [];
+
+		$result[] = $entity->organization;
+		$result[] = $entity->recipient;
+		$result[] = $entity->locality;
+
+		return implode($type, array_filter($result));
 	}
 
 	public function formal($entity, $locale = null) {

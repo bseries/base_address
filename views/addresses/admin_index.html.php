@@ -54,7 +54,7 @@ $this->set([
 			<tr>
 				<td class="user">
 					<?= $this->user->link($item->user()) ?>
-				<td class="emphasize address"><?= $item->format('oneline') ?>
+				<td class="emphasize address"><?= $item->format('compact') ?>
 				<td class="date">
 					<time datetime="<?= $this->date->format($item->modified, 'w3c') ?>">
 						<?= $this->date->format($item->modified, 'date') ?>

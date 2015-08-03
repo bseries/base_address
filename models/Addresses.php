@@ -135,7 +135,7 @@ class Addresses extends \base_core\models\Base {
 	}
 
 	public function title($entity) {
-		return $entity->format('oneline');
+		return $entity->format('compact');
 	}
 
 	public static function findExact($data) {

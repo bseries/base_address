@@ -20,7 +20,11 @@ class Contacts extends \base_core\models\Base {
 		'connection' => false
 	];
 
+	// Creates a User-like entity with an attached address from a flat
+	// data array.
 	public static function create(array $data = [], array $options = []) {
+		// Build a mapping of fields that belong into the address
+		// entity.
 		$fields = array_diff(array_keys(Addresses::schema()->fields()), [
 			'id',
 			'user_id',
@@ -28,6 +32,7 @@ class Contacts extends \base_core\models\Base {
 			'modified'
 		]);
 		$map = array_combine($fields, $fields) + [
+			// These fields are copied.
 			'name' => 'recipient'
 		];
 		$address = [];
@@ -39,6 +44,7 @@ class Contacts extends \base_core\models\Base {
 		}
 		$address = Addresses::create($address);
 
+		// Remaps fields coming from a Settings::read()-contact.
 		$map = [
 			'name' => 'name',
 			'organization' => 'name',

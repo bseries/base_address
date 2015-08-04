@@ -211,7 +211,7 @@ class Addresses extends \base_core\models\Base {
 		$result[] = $entity->recipient;
 		$result[] = $entity->locality;
 
-		return implode($type, array_filter($result));
+		return implode(', ', array_filter($result));
 	}
 
 	public function formal($entity, $locale = null) {

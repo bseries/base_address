@@ -60,7 +60,6 @@ $this->set([
 						<?= $this->date->format($item->modified, 'date') ?>
 					</time>
 				<td class="actions">
-					<?= $this->html->link($t('delete'), ['id' => $item->id, 'action' => 'delete', 'library' => 'base_address'], ['class' => 'button delete']) ?>
 					<?= $this->html->link($t('open'), ['id' => $item->id, 'action' => 'edit', 'library' => 'base_address'], ['class' => 'button']) ?>
 			<?php endforeach ?>
 		</tbody>

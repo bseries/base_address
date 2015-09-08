@@ -231,6 +231,7 @@ class Addresses extends \base_core\models\Base {
 	}
 
 	// FIXME Auto map regions to prefixes.
+	// FIXME Use Google's libphonenumber for this: https://github.com/giggsey/libphonenumber-for-php
 	public static function completePhone($value, $region) {
 		if (!empty($value)) {
 			// First remove any whitespace characters so we can match more easily.
@@ -240,8 +241,8 @@ class Addresses extends \base_core\models\Base {
 			// one according to region.
 			if (!preg_match('/^(\+|00)/', $value)) {
 				if ($region === 'DE') {
-				// Assume we have a leading 0 for the city.
-				$value = preg_replace('/^(0)/','+49', $value);
+					// Assume we have a leading 0 for the city.
+					$value = preg_replace('/^(0)/','+49', $value);
 				}
 			}
 		}

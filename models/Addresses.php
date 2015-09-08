@@ -143,12 +143,6 @@ class Addresses extends \base_core\models\Base {
 		return $entity->format('compact');
 	}
 
-	public static function findExact($data) {
-		return static::find('first', [
-			'conditions' => $data
-		]);
-	}
-
 	// @param $target Entity|array
 	public function copy($entity, $target, $prefix = null) {
 		$skipFields = ['id', 'user_id', 'created', 'modified'];
@@ -253,6 +247,16 @@ class Addresses extends \base_core\models\Base {
 			}
 		}
 		return $value;
+	}
+
+	/* Deprecated / BC */
+
+	public static function findExact($data) {
+		trigger_error('findExact is deprecated', E_USER_DEPRECATED);
+
+		return static::find('first', [
+			'conditions' => $data
+		]);
 	}
 }
 

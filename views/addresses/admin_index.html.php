@@ -29,10 +29,6 @@ $this->set([
 		<?= $this->html->link($t('address'), ['action' => 'add'], ['class' => 'button add']) ?>
 	</div>
 
-	<div class="help">
-		<?= $t("Addresses can be owned by a user but addresses without an owner are possible, too.") ?>
-	</div>
-
 	<?php if ($data->count()): ?>
 	<table>
 		<thead>
@@ -69,4 +65,9 @@ $this->set([
 	<?php endif ?>
 
 	<?=$this->view()->render(['element' => 'paging'], compact('paginator'), ['library' => 'base_core']) ?>
+
+	<div class="bottom-help">
+		<?= $t("Addresses can be owned by a user but addresses without an owner are possible, too.") ?>
+	</div>
+
 </article>

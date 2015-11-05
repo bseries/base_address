@@ -19,7 +19,7 @@ namespace base_address\models;
 
 use lithium\g11n\Catalog;
 
-class Countries extends \base_core\models\G11nBase {
+class Countries extends \base_core\models\BaseG11n {
 
 	protected static function _available() {
 		return explode(' ', PROJECT_COUNTRIES);

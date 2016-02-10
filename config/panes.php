@@ -22,7 +22,7 @@ use lithium\g11n\Message;
 
 extract(Message::aliases());
 
-Panes::register('access.addresses', [
+Panes::register('user.addresses', [
 	'title' => $t('Addresses', ['scope' => 'base_address']),
 	'url' => [
 		'library' => 'base_address',

@@ -13,9 +13,9 @@
     "require": {
         "php": ">=5.5.0",
         "composer/installers": "1.*@stable",
-        "atelierdisko/li3_flash_message": "1.0.*@beta",
+        "atelierdisko/li3_flash_message": "1.0.*",
         "unionofrad/lithium": "1.0.*@dev",
-        "unionofrad/li3_cldr": "1.0.*@dev",
+        "unionofrad/li3_cldr": "1.0.*@RC",
 		"atelierdisko/base_core": "1.4.*",
 		"commerceguys/addressing": "0.7.*",
 		"symfony/intl": "*"

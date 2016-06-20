@@ -17,15 +17,16 @@
 
 namespace base_address\models;
 
-use lithium\core\Environment;
-use lithium\util\Validator;
-use lithium\util\Inflector;
-use lithium\g11n\Message;
-use CommerceGuys\Addressing\Model\Address as FormalAddress;
 use CommerceGuys\Addressing\Formatter\PostalLabelFormatter;
+use CommerceGuys\Addressing\Model\Address as FormalAddress;
 use CommerceGuys\Addressing\Repository\AddressFormatRepository;
 use CommerceGuys\Addressing\Repository\CountryRepository;
 use CommerceGuys\Addressing\Repository\SubdivisionRepository;
+use base_address\models\Countries;
+use lithium\core\Environment;
+use lithium\g11n\Message;
+use lithium\util\Inflector;
+use lithium\util\Validator;
 
 class Addresses extends \base_core\models\Base {
 
@@ -124,10 +125,13 @@ class Addresses extends \base_core\models\Base {
 			]
 		];
 		Validator::add('countryCode', function($value, $format, $options) {
-			return in_array($value, explode(' ', PROJECT_COUNTRIES));
+			return Countries::find('first', [
+				'conditions' => [
+					'id' => $value
+				],
+				'available' => true
+			]);
 		});
-
-		// Phone
 
 		$model->validates['phone'] = [
 			'phone' => [

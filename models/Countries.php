@@ -27,12 +27,16 @@ class Countries extends \base_core\models\BaseG11n {
 
 	protected static function _data(array $options) {
 		$data = [];
+
 		$results = Catalog::read(true, 'territory', $options['translate']);
 
-		foreach ($options['available'] as $available) {
-			$data[$available] = [
-				'id' => $available,
-				'name' => $results[$available]
+		if ($options['available'] !== true) {
+			$results = array_intersect_assoc($results, array_fill_key($options['available'], null));
+		}
+		foreach ($results as $code => $name) {
+			$data[$code] = [
+				'id' => $code,
+				'name' => $name
 			];
 		}
 		return $data;

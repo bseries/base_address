@@ -31,7 +31,7 @@ class Countries extends \base_core\models\BaseG11n {
 		$results = Catalog::read(true, 'territory', $options['translate']);
 
 		if ($options['available'] !== true) {
-			$results = array_intersect_assoc($results, array_fill_key($options['available'], null));
+			$results = array_intersect_assoc($results, array_fill_keys($options['available'], null));
 		}
 		foreach ($results as $code => $name) {
 			$data[$code] = [

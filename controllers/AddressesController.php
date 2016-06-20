@@ -31,7 +31,9 @@ class AddressesController extends \base_core\controllers\BaseController {
 
 	protected function _selects($item = null) {
 		$users = [null => '-'] + Users::find('list', ['order' => 'name']);
-		$countries = Countries::find('list');
+		$countries = Countries::find('list', [
+			'available' => true
+		]);
 
 		return compact('users', 'countries');
 	}

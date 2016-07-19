@@ -27,7 +27,7 @@ class AddressesController extends \base_core\controllers\BaseController {
 	use \base_core\controllers\AdminAddTrait;
 	use \base_core\controllers\AdminEditTrait;
 	use \base_core\controllers\AdminDeleteTrait;
-	use \base_core\controllers\ListUsersTrait;
+	use \base_core\controllers\UsersTrait;
 
 	protected function _selects($item = null) {
 		if ($item) {

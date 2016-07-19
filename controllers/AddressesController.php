@@ -27,14 +27,17 @@ class AddressesController extends \base_core\controllers\BaseController {
 	use \base_core\controllers\AdminAddTrait;
 	use \base_core\controllers\AdminEditTrait;
 	use \base_core\controllers\AdminDeleteTrait;
+	use \base_core\controllers\ListUsersTrait;
 
 	protected function _selects($item = null) {
-		$users = [null => '-'] + Users::find('list', ['order' => 'name']);
-		$countries = Countries::find('list', [
-			'available' => true
-		]);
-
-		return compact('users', 'countries');
+		if ($item) {
+			$users = $this->_users($item, ['field' => 'user_id', 'empty' => true]);
+			$countries = Countries::find('list', [
+				'available' => true
+			]);
+			return compact('users', 'countries');
+		}
+		return [];
 	}
 }
 

@@ -138,7 +138,7 @@ msgstr "öffnen"
 
 #: views/addresses/admin_index.html.php:64
 msgid "No items available, yet."
-msgstr "Es sind noch keine Element verfügbar."
+msgstr "Es sind noch keine Einträge verfügbar."
 
 #: views/addresses/admin_index.html.php:70
 msgid ""

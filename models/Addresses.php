@@ -93,7 +93,10 @@ class Addresses extends \base_core\models\Base {
 			return preg_match('/^\w+/i', $value);
 		});
 		Validator::add('streetNo', function($value, $format, $options) {
-			return preg_match('/\s[0-9]+/', $value);
+			// Check if string contains a numeral. As international addresses are
+			// validated here (some have the no in front, some at the end), the
+			// check is reduced to its simplest form.
+			return preg_match('/[0-9]+/', $value);
 		});
 
 		$model->validates['locality'] = [

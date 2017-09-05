@@ -45,7 +45,21 @@ class Contacts extends \base_core\models\Base {
 			if (!isset($data[$key])) {
 				continue;
 			}
-			$address[$value] = $data[$key];
+			if ($key === 'country') {
+				$country = Countries::find('first', [
+					'conditions' => [
+						'name' => $data[$key]
+					],
+					'available' => true
+				]);
+				if (!$country) {
+					$message = 'Failed to convert contact country to address country code.';
+					throw new Exception($message);
+				}
+				$address[$key] = $country->id;
+			} else {
+				$address[$value] = $data[$key];
+			}
 		}
 		$address = Addresses::create($address);
 

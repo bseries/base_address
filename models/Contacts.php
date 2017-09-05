@@ -18,6 +18,7 @@
 namespace base_address\models;
 
 use base_address\models\Addresses;
+use Exception;
 
 class Contacts extends \base_core\models\Base {
 
@@ -46,17 +47,28 @@ class Contacts extends \base_core\models\Base {
 				continue;
 			}
 			if ($key === 'country') {
-				$country = Countries::find('first', [
+				$isCountryCode = Countries::find('first', [
 					'conditions' => [
-						'name' => $data[$key]
+						'id' => $data[$key]
 					],
 					'available' => true
 				]);
-				if (!$country) {
-					$message = 'Failed to convert contact country to address country code.';
-					throw new Exception($message);
+				if ($isCountryCode) {
+					$address[$value] = $data[$key];
+				} else {
+					$country = Countries::find('first', [
+						'conditions' => [
+							'name' => $data[$key]
+						],
+						'available' => true
+					]);
+					if (!$country) {
+						$message  = "Failed to convert contact country `{$data[$key]}` ";
+						$message .= "to address country code.";
+						throw new Exception($message);
+					}
+					$address[$key] = $country->id;
 				}
-				$address[$key] = $country->id;
 			} else {
 				$address[$value] = $data[$key];
 			}

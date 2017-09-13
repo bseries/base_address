@@ -242,6 +242,18 @@ class Addresses extends \base_core\models\Base {
 			->setRecipient($entity->recipient);
 	}
 
+	public function country($entity) {
+		if (!$entity->country) {
+			return;
+		}
+		return Countries::find('first', [
+			'conditions' => [
+				'id' => $entity->country
+			],
+			'available' => true
+		]);
+	}
+
 	// FIXME Auto map regions to prefixes.
 	// FIXME Use Google's libphonenumber for this: https://github.com/giggsey/libphonenumber-for-php
 	public static function completePhone($value, $region) {

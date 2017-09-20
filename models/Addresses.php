@@ -61,12 +61,12 @@ class Addresses extends \base_core\models\Base {
 
 		$model->validates['recipient'] = [
 			'or' => [
-				'recipientOrOrganization',
+				'Addresses.recipientOrOrganization',
 				'on' => ['create', 'update'],
 				'message' => $t('Please provide either name or company.', ['scope' => 'base_address'])
 			]
 		];
-		Validator::add('recipientOrOrganization', function($value, $format, $options) {
+		Validator::add('Addresses.recipientOrOrganization', function($value, $format, $options) {
 			return !empty($value) || !empty($options['values']['organization']);
 		});
 
@@ -78,21 +78,21 @@ class Addresses extends \base_core\models\Base {
 				'message' => $t('This field cannot be empty.', ['scope' => 'base_address'])
 			],
 			'streetName' => [
-				'streetName',
+				'Addresses.streetName',
 				'on' => ['create', 'update'],
 				'last' => true,
 				'message' => $t('Missing street name.', ['scope' => 'base_address'])
 			],
 			'streetNo' => [
-				'streetNo',
+				'Addresses.streetNo',
 				'on' => ['create', 'update'],
 				'message' => $t('Missing street number.', ['scope' => 'base_address'])
 			],
 		];
-		Validator::add('streetName', function($value, $format, $options) {
+		Validator::add('Addresses.streetName', function($value, $format, $options) {
 			return preg_match('/^\w+/i', $value);
 		});
-		Validator::add('streetNo', function($value, $format, $options) {
+		Validator::add('Addresses.streetNo', function($value, $format, $options) {
 			// Check if string contains a numeral. As international addresses are
 			// validated here (some have the no in front, some at the end), the
 			// check is reduced to its simplest form.
@@ -122,12 +122,12 @@ class Addresses extends \base_core\models\Base {
 				'message' => $t('A country must be selected.', ['scope' => 'base_address'])
 			],
 			'countryCode' => [
-				'countryCode',
+				'Addresses.countryCode',
 				'on' => ['create', 'update'],
 				'message' => $t('Invalid country.', ['scope' => 'base_address'])
 			]
 		];
-		Validator::add('countryCode', function($value, $format, $options) {
+		Validator::add('Addresses.countryCode', function($value, $format, $options) {
 			return Countries::find('first', [
 				'conditions' => [
 					'id' => $value

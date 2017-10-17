@@ -1,29 +1,16 @@
 {
-    "name": "atelierdisko/base_address",
+    "name": "bseries/base_address",
     "description": "Address functionality for Bento.",
-    "homepage": "https://atelierdisko.de",
     "type": "lithium-library",
-    "license": "proprietary",
-    "authors": [
-        {
-          "name": "Atelier Disko",
-          "homepage": "https://atelierdisko.de"
-        }
-    ],
+    "license": ["BSD-3-Clause"],
     "require": {
         "php": "^5.5 || ^7.0",
         "composer/installers": "1.*@stable",
         "atelierdisko/li3_flash_message": "1.*",
         "unionofrad/lithium": "^1.1",
         "unionofrad/li3_cldr": "1.*",
-		"atelierdisko/base_core": "1.5.*@dev",
-		"commerceguys/addressing": "0.7.*",
-		"symfony/intl": "*"
-    },
-    "require-dev": {
-        "phpunit/phpunit": ">=4.0.0"
-    },
-    "repositories": [
-      { "type": "vcs", "url": "git@code.atelierdisko:base_core" }
-   ]
+        "bseries/base_core": "1.5.*@dev",
+        "commerceguys/addressing": "0.7.*",
+        "symfony/intl": "*"
+    }
 }

@@ -46,7 +46,7 @@ class Addresses extends \base_core\models\Base {
 
 	public static function init() {
 		extract(Message::aliases());
-		$model = static::_object();
+		$model = static::object();
 
 		// The following rules only check for existencce of fields.
 		// The rest of the work is left to the addressing validator.

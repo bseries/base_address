@@ -5,7 +5,7 @@
     "license": ["BSD-3-Clause"],
     "require": {
         "atelierdisko/li3_flash_message": "^1",
-        "bseries/base_core": "1.5.*@dev",
+        "bseries/base_core": "^1.5",
         "commerceguys/addressing": "^0.7",
         "composer/installers": "^1",
         "php": "^7",

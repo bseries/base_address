@@ -9,7 +9,7 @@
         "atelierdisko/li3_flash_message": "1.*",
         "unionofrad/lithium": "^1.2",
         "unionofrad/li3_cldr": "1.*",
-        "bseries/base_core": "1.5.*@dev",
+        "bseries/base_core": "^1.5",
         "commerceguys/addressing": "0.7.*",
         "symfony/intl": "*"
     }

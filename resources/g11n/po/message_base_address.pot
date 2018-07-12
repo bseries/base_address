@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: base_address 1.0\n"
 "Report-Msgid-Bugs-To: info@atelierdisko.de\n"
-"POT-Creation-Date: 2016-04-08 12:47+0200\n"
+"POT-Creation-Date: 2018-07-12 12:51+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,35 +17,35 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: config/panes.php:26
+#: config/panes.php:18
 msgid "Addresses"
 msgstr ""
 
-#: models/Addresses.php:65
+#: models/Addresses.php:58
 msgid "Please provide either name or company."
 msgstr ""
 
-#: models/Addresses.php:77 models/Addresses.php:102 models/Addresses.php:111
+#: models/Addresses.php:70 models/Addresses.php:98 models/Addresses.php:107
 msgid "This field cannot be empty."
 msgstr ""
 
-#: models/Addresses.php:83
+#: models/Addresses.php:76
 msgid "Missing street name."
 msgstr ""
 
-#: models/Addresses.php:88
+#: models/Addresses.php:81
 msgid "Missing street number."
 msgstr ""
 
-#: models/Addresses.php:118
+#: models/Addresses.php:114
 msgid "A country must be selected."
 msgstr ""
 
-#: models/Addresses.php:123
+#: models/Addresses.php:119
 msgid "Invalid country."
 msgstr ""
 
-#: models/Addresses.php:137
+#: models/Addresses.php:136
 msgid "The field is not correctly formatted."
 msgstr ""
 
@@ -54,64 +54,64 @@ msgstr ""
 msgid "address"
 msgstr ""
 
-#: views/addresses/admin_form.html.php:27
+#: views/addresses/admin_form.html.php:28
 msgid "Recipient"
 msgstr ""
 
-#: views/addresses/admin_form.html.php:31
+#: views/addresses/admin_form.html.php:32
 msgid "Organization"
 msgstr ""
 
-#: views/addresses/admin_form.html.php:38
+#: views/addresses/admin_form.html.php:39
 #: views/addresses/admin_index.html.php:36
 msgid "User"
 msgstr ""
 
-#: views/addresses/admin_form.html.php:51
+#: views/addresses/admin_form.html.php:52
 msgid "Phone"
 msgstr ""
 
-#: views/addresses/admin_form.html.php:61
+#: views/addresses/admin_form.html.php:62
 msgid "Address Line"
 msgstr ""
 
-#: views/addresses/admin_form.html.php:65
+#: views/addresses/admin_form.html.php:66
 msgid "Address Line (additional)"
 msgstr ""
 
-#: views/addresses/admin_form.html.php:69
+#: views/addresses/admin_form.html.php:70
 msgid "Locality"
 msgstr ""
 
-#: views/addresses/admin_form.html.php:73
+#: views/addresses/admin_form.html.php:74
 msgid "Dependent Locality"
 msgstr ""
 
-#: views/addresses/admin_form.html.php:77
+#: views/addresses/admin_form.html.php:78
 msgid "Postal Code"
 msgstr ""
 
-#: views/addresses/admin_form.html.php:81
+#: views/addresses/admin_form.html.php:82
 msgid "Sorting Code"
 msgstr ""
 
-#: views/addresses/admin_form.html.php:85
+#: views/addresses/admin_form.html.php:86
 msgid "Administrative Area"
 msgstr ""
 
-#: views/addresses/admin_form.html.php:89
+#: views/addresses/admin_form.html.php:90
 msgid "Country"
 msgstr ""
 
-#: views/addresses/admin_form.html.php:97
+#: views/addresses/admin_form.html.php:98
 msgid "Rendered Postal"
 msgstr ""
 
-#: views/addresses/admin_form.html.php:107
+#: views/addresses/admin_form.html.php:108
 msgid "delete"
 msgstr ""
 
-#: views/addresses/admin_form.html.php:113
+#: views/addresses/admin_form.html.php:114
 msgid "save"
 msgstr ""
 
